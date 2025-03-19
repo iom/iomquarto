@@ -1,0 +1,17 @@
+title: quarto_iom_article
+author: Edouard Legoupil
+version: 0.0.1
+quarto-required: ">=1.5.0"
+contributes:
+  formats:
+    html:
+      toc: true
+      toc-location: right
+      theme: [default, html.scss]
+      highlight-style: github
+      title-block-banner: false
+      code-block-bg: "#f2f2f2"
+      include-in-header: header.html
+      include-after-body: footer.html
+      smooth-scroll: true
+      date-format: "D MMMM YYYY"

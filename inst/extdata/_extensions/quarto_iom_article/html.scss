@@ -1,0 +1,233 @@
+/*-- scss:defaults --*/
+
+// IOM colors
+$iom-blue: #0033A0;
+$iom-white: #FFFFFF;
+$iom-black: #000000;
+$iom-yellow: #FFB81C;
+$iom-grey: #666666;
+$iom-navy: #18375F;
+$iom-green: #5CB8B2;
+$iom-red: #D22630;
+$iom-orange: #FF671F;
+$iom-lightblue: #418FDE;
+
+$iom-lightgrey: #E6E6E6;
+$iom-mediumgrey: #CCCCCC;
+$iom-darkgrey: #222222;
+
+
+// Bootstrap default variable overrides
+
+// Grays
+$gray-100: #f2f2f2;
+$gray-200: $iom-lightgrey;
+$gray-300: $iom-mediumgrey;
+$gray-400: #b3b3b3;
+$gray-500: #999999;
+$gray-600: $iom-grey;
+$gray-700: #4d4d4d;
+$gray-800: #333333;
+$gray-900: $iom-darkgrey;
+
+// Main
+$blue: $iom-blue;
+$yellow: $iom-yellow;
+$green: $iom-green;
+$red: $iom-red;
+$orange: $iom-orange;
+
+// Theme
+$info: #17a2b8;
+$warning: #ffc107;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Fira+Mono\Lato:400,300,300italic,400italic,700,700italic,900,900italic&display=swap');
+$font-family-base: 'Open Sans', sans-serif;
+$font-family-code: 'Fira Mono', monospace;
+$headings-font-weight: 700;
+$headings-color: $iom-black;
+$code-color: $iom-red;
+$lead-font-weight: 400;
+
+
+// Link
+$link-decoration: none;
+// $link-hover-color: $iom-blue;
+$link-hover-decoration: underline;
+
+// Type
+// $blockquote-footer-color: $iom-darkgrey;
+$mark-bg: #FFF9CB;
+
+// Breadcrumb
+$breadcrumb-divider: quote(">");
+
+// Button
+$btn-font-weight: bold;
+
+/*-- scss:rules --*/
+.title {
+    color: $iom-blue;
+}
+
+.quarto-title-banner .title {
+    color: $iom-yellow;
+}
+
+h1,h2,h3,h4,h5,h6{
+    letter-spacing:0.2rem;
+    color:#000;
+    font-weight:bold;
+    margin-top:0;
+    margin-bottom:0.5rem;
+}
+
+
+h1,.h1{
+    font-size:2.1875rem;
+}
+
+h2,.h2 {
+    color: $iom-blue;
+    border-bottom: none;
+    font-size:1.75rem;
+}
+
+h3,.h3{
+    font-size:1.53125rem;
+}
+
+h4,.h4{
+    font-size:1.3125rem;
+}
+h5,.h5{
+    font-size:1.09375rem;
+}
+h6,.h6{
+    font-size:0.875rem;
+}
+
+p{
+    margin-top:0;
+    margin-bottom:1rem;
+}
+
+li::marker {
+    color: $iom-blue;
+}
+
+ol,ul,dl{
+    margin-top:0;
+    margin-bottom:1rem;
+}
+ol ol,ul ul,ol ul,ul ol{
+    margin-bottom:0;
+}
+dt{
+    font-weight:bold;
+}
+dd{
+    margin-bottom:.5rem;
+    margin-left:0;
+}
+b,strong{
+    font-weight:bolder;
+}
+small{
+    font-size:80%;
+}
+sub,sup{
+    position:relative;
+    font-size:75%;
+    line-height:0;
+    vertical-align:baseline;
+}
+sub{
+    bottom:-.25em;
+}
+sup{
+    top:-.5em;
+}
+
+blockquote {
+    border-left: none;
+    text-align: center;
+    margin:0 0 1rem;
+}
+
+.blockquote {
+    padding-left: 1.5rem;
+    color: $iom-black;
+    font-size:2.125rem;
+    font-weight:300;
+    border-left:0;
+    line-height:1.411;
+}
+
+blockquote p {
+    margin-bottom: 0;
+}
+
+blockquote p .blockquote-author {
+    color: $iom-darkgrey;
+    font-size: .875rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+a{
+    color:#0035a0;
+    text-decoration:none;
+    background-color:transparent;
+}
+a:hover{
+    color:#002163;
+    text-decoration:underline;
+}
+a:not([href]):not([class]){
+    color:inherit;
+    text-decoration:none;
+}
+a:not([href]):not([class]):hover{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    vertical-align:middle;
+    border-style:none;
+}
+svg{
+    overflow:hidden;
+    vertical-align:middle;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    margin-bottom:1rem;
+    color:#343a40;
+}
+caption{
+    padding-top:0.75rem;
+    padding-bottom:0.75rem;
+    color:#6c757d;
+    text-align:left;
+    caption-side:bottom;
+}
+
+label{
+    display:inline-block;
+    margin-bottom:0.5rem;
+}
+
+th{
+    text-align:inherit;
+    text-align:-webkit-match-parent;
+}
+
+.quarto-title-meta-heading,
+.abstract-title {
+    color: $iom-blue;
+}

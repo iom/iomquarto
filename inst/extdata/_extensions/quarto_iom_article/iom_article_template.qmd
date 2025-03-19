@@ -1,0 +1,459 @@
+---
+title:  Writing Data Articles
+subtitle: Create reproducible analysis
+date: today
+author: Edouard Legoupil
+format: quarto_iom_article-html
+---
+
+## Quarto HTML document
+
+:::{.lead}
+Create [IOM branded](https://emergencymanual.iom.int/sites/g/files/tmzbdl1956/files/2022-08/IOM%20Branding%20Guidelines%202018.pdf) HTML document mixing text, images, tables, plots, code and more, directly with this template. 
+:::
+
+As with the other IOM Quarto extensions, the underlying document syntax is `markdown`. You can find all the information on authoring documents with Quarto [here](https://quarto.org/docs/authoring/markdown-basics.html). You can find more specific information on [figures](https://quarto.org/docs/authoring/figures.html) and [tables](https://quarto.org/docs/authoring/tables.html).
+
+### IOM HTML Template
+
+The `quarto_iom_article-html` Quarto template comes with predefined styles and components but Quarto is extremely flexible and, depending on your needs, you can modify many aspects directly from the document `YAML` or by simply using `CSS` classes. We recommend you stick with the default options but look at the reference below to know more about what you can do with Quarto.
+
+Refer to the Quarto guide for [HTML document](https://quarto.org/docs/output-formats/html-basics.html) or the complete [HTML format reference](https://quarto.org/docs/reference/formats/html.html) for more information.
+
+#### Title box
+
+Some attributes of the `YAML` will be used to populate the top banner, such as the `title`, `date`, `author` and more. By default the banner is part of the other content flow and uses the default white background. You can turn it to a IOM blue banner, separated from the rest, by adding `title-block-banner: true` in the `YAML`. For example:
+
+```{yaml}
+---
+title:  Writing Data Articles
+subtitle: Create reproducible analysis
+date: today
+author: Edouard Legoupil
+format: quarto_iom_prez-article
+---
+```
+
+Note that only the `title`, `subtitle` and `description` attribute will be added to the blue banner. The other parameters will keep their default styling. Find more information on the title blocks [here](https://quarto.org/docs/authoring/title-blocks.html#title-banners).
+
+#### Table of content
+
+By default, the table of content is **visible**. Simply add `toc: false` to the `YAML` to hide the toc. You can find more information on toc and its settings [here](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents).
+
+#### Footer
+
+A footer including the IOM logo will be added at the bottom of the page automatically.
+
+## Typography
+
+In this section, we will show the basic usage of the template on how to make IOM branded HTML document but as Quarto is using [Bootstrap](https://getbootstrap.com/), almost all the functionalities of the framework are available to you. Please, refer to the official [Bootstrap documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) to see what you can do with some simple `CSS` classes.
+
+You can add classes, attributes, and other identifiers to regions of content using Divs and Spans.
+
+For example, here we add the `{.bg-primary}` class to a region of content using a div (`:::`):
+
+```{markdown}
+::: {.bg-primary}
+This content will be styled with a IOM blue background
+:::
+```
+
+You can achieve the same at the `span` level with inline styling. For example:
+
+```{markdown}
+This is normal text but [this text will be in IOM blue]{.text-primary}.
+```
+
+Check the Quarto documentation on [Divs and Spans](https://quarto.org/docs/authoring/markdown-basics.html#divs-and-spans) for more information and examples.
+
+### Headings
+
+Simply use the `markdown` notation for headings `#` to create your content structure. For example:
+
+```{markdown}
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+```
+
+[Heading 1]{.h1}
+
+[Heading 2]{.h2}
+
+[Heading 3]{.h3}
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+### Inline text
+
+Simply use the `markdown` built-in notation to format your content. For example:
+
+```{markdown}
+*This line will render as italicized text.*
+
+**This line will render as bold text.**
+
+***This line will render as bold and italic text.***
+
+`This line will render as inline code.`
+
+~~This line will be strikethrough.~~
+
+This line will include a [link to IOM webpage](https://www.IOM.org/)
+```
+
+*This line will render as italicized text.*
+
+**This line will render as bold text.**
+
+***This line will render as bold and italic text.***
+
+`This line will render as inline code.`
+
+~~This line will be strikethrough.~~
+
+This line will include a [link to IOM webpage](https://www.iom.int/)
+
+Not all the formatting can be achieved with `markdown` only, but Quarto understands `HTML` so extra styling can be perfomed by directly entering `HTML` code in your Quarto document. For example:
+
+```{markdown}
+<u>This line of text will render as underlined.</u>
+```
+
+<u>This line of text will render as underlined.</u>
+
+The template also includes some `CSS` classes to help with formating. For example:
+
+```{markdown}
+:::{.lead}
+This is a lead paragraph. It stands out from regular paragraphs.
+:::
+
+You can use the mark class to [highlight]{.mark} text.
+
+[This line of text is meant to be treated as fine print.]{.small}
+```
+
+:::{.lead}
+This is a lead paragraph. It stands out from regular paragraphs.
+:::
+
+You can use the mark class to [highlight]{.mark} text.
+
+[This line of text is meant to be treated as fine print.]{.small}
+
+Useful for IOM document you can also create **footnotes** and **abbreviations** with the following code:
+
+```{markdown}
+This is a footnote^[Text of the footnote]
+
+<abbr title="International Organisation for Migration">IOM</abbr>
+```
+
+This is a footnote^[Text of the footnote]
+
+<abbr title="International Organisation for Migration">IOM</abbr>
+
+For more examples and options, check the [Bootstrap documentation on typography](https://getbootstrap.com/docs/5.3/content/typography/).
+
+### Lists
+
+The template comes with stylized lists, simply create them using `markdown` notation. For examples:
+
+```{markdown}
+* unordered list
+    + sub-item 1
+    + sub-item 2
+        - sub-sub-item 1
+
+1. ordered list
+2. item 2
+    i) sub-item 1
+         A.  sub-sub-item 1
+```
+
+* unordered list
+    + sub-item 1
+    + sub-item 2
+        - sub-sub-item 1
+
+1. ordered list
+2. item 2
+    i) sub-item 1
+         A.  sub-sub-item 1
+
+### Blockquote
+
+Blockquote can be achieved with `markdown` using the `>` notation. To include a quote author, add a blank line with the `>` character and a line with the `>` character for the author itself. The `{.blockquote-author}` class **must** be added to the text for the credential. For example:
+
+```{markdown}
+> "A simple blockquote"
+
+> "A blockquote with source"
+>
+> [From an important person]{.blockquote-author}
+```
+
+> "A simple blockquote"
+
+> "A blockquote with source"
+>
+> [From an important person]{.blockquote-author}
+
+Note that the **\"** character has to be added manually, directly to the quote. 
+
+### Callout blocks
+
+Callout blocks can be helpful to attract reader's attention. Please review the [Quarto article on callouts](https://quarto.org/docs/authoring/callouts.html) for more information. Below an example of a `note` callout.
+
+```{markdown}
+::: {.callout-note}
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+
+And their style can be changed further with the `appearance` attribute.
+:::
+```
+
+::: {.callout-note}
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+
+And their style can be changed further with the `appearance` attribute.
+:::
+
+### Buttons
+
+`Markdown` doesn't include any notation for buttons, simply use `HTML` and some `CSS` classes to create IOM branded buttons. For example:
+
+```{markdown}
+<p>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-outline-dark">Dark</button>
+</p>
+```
+
+<p>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-outline-dark">Dark</button>
+</p>
+
+Review [Bootstrap documentation on buttons](https://getbootstrap.com/docs/5.3/components/buttons/) for more information.
+
+## Colors
+
+Bootstrap comes with an extensive set of color helper classes for [text](https://getbootstrap.com/docs/5.3/utilities/colors/), [background](https://getbootstrap.com/docs/5.3/utilities/background/) and even [buttons](https://getbootstrap.com/docs/5.3/components/buttons/) as seen above. Nevertheless, we would recommend, you keep your document as simple as possible and stick to the `{primary}` and `{secondary}` color palettes of bootstrap.
+
+To change the color, simply apply a specific `CSS` class to the desired element. For text and background, it starts with `{.text}` or `{.bg}` followed by the color name in bootstrap like `{-primary}`, `{-secondary}`, `{-warning}` and more.
+
+Keep in mind that not all the text and background will work together and that you might need to tweak the element separately to make sure it is readable.
+
+### Text color
+
+For example, to add some IOM blue text to your content use the following code example:
+
+```{markdown}
+This my body text followed by [IOM blue]{.text-primary} text.
+```
+
+This my body text followed by [IOM blue]{.text-primary} text.
+
+### Background color
+
+As mentioned, adding a specific background color works exactly the same way as the text color. The main difference though is that usually background color will be applied on fenced `divs` but all the `CSS` classes work regardless of it's application to a `span` or a `div`.
+
+Just be careful to apply some coloring to the text if the contrast between the text and the background isn't sufficient and be mindful of the potential `padding` and `margin` needed.
+
+For example, to create a IOM blue box with white text use the following code example:
+
+```{markdown}
+::: {.bg-primary .text-white .p-3}
+A IOM blue box with white text and some padding for readability.
+:::
+```
+
+::: {.bg-primary .text-white .px-3 .pt-3 .pb-1}
+A  blue box with white text and some padding for readability.
+:::
+
+## Source code
+
+To include code, use fenced code blocks with a language specifier. By default the `echo` parameter of code block is set to true, turn it to `false` to hide the code in the document.
+
+```{markdown}
+#| echo: true
+
+\```{r}
+#| echo: true
+#| warning: false
+library(tidyverse)
+library(iomthemes)
+\```
+
+```
+
+There are wide variety of options available to customize the display of source code within HTML documents, check the [Quarto documentation](https://quarto.org/docs/output-formats/html-code.html) for more information.
+
+## Plots
+
+Use the [`{iomthemes}`](https://iom.github.io/iomthemes/) package to produce  branded plots directly in the presentation. For example: 
+
+```{r}
+#| label: data-plot
+#| warning: false
+#| echo: false
+#| fig-align: center
+
+library(tidyverse)
+library(iomthemes)
+
+data <- readxl::read_excel(system.file(
+  "undesa_pd_2020_ims_stock_by_sex_destination_and_origin.xlsx",
+                                           package = "iomthemes"),
+  col_types = c("numeric", "text", "text","numeric", "text",
+               "text", "numeric",
+              "numeric","numeric", "numeric", "numeric","numeric","numeric",
+              "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", 
+              "numeric","numeric", "numeric", "numeric", "numeric", "numeric",
+              "numeric","numeric", "numeric" ), 
+  sheet = "Table 1", skip = 9) |>
+  ## Getting clean variable names
+  janitor::clean_names() |>
+  dplyr::rename("total.2020"="x2020_14")|>
+  # Add ISO2 country code to identify the country level records 
+  dplyr::mutate( 
+    origin.iso2 = countrycode::countrycode(
+                    location_code_of_origin,
+                    origin = "un",
+                    destination = "iso2c"),
+    destination.iso2 = countrycode::countrycode(
+                    location_code_of_destination,
+                    origin = "un",
+                    destination = "iso2c")) |>
+  # Filter out rows where 'origin.iso2' and 'origin.iso2' is NA (missing)
+  # We do so to keep only country level records - filter out region subtotal
+  filter( !(is.na(origin.iso2)) ) |>
+  filter( !(is.na(destination.iso2)) ) |>
+  # Group the data by country of origin
+  group_by(region_development_group_country_or_area_of_origin) |>
+  # Summarize the total number of migrants for the year 2020 & remove NA! 
+  summarise(total_migrants_2020 = sum(total.2020, na.rm = TRUE)) |>
+  # Arrange the summarized data in descending order of total migrants
+  arrange(desc(total_migrants_2020)) |>
+  # Select the top 10 countries of origin with the highest number of migrants
+  slice_head(n = 10) 
+data  |>
+  ggplot(
+    aes(x = reorder(region_development_group_country_or_area_of_origin,
+                    total_migrants_2020),
+             y = total_migrants_2020)) +
+  # Define it as a bar chart and apply IOM color palette
+  geom_bar(stat = "identity",
+           ## Apply IOM color palette!
+           fill = iomthemes::iom_pal(n = 1, name= "pal_blue"),
+           width = 0.8) +
+  # Flip the chart to make it more legible
+  coord_flip()  +
+  ## Format the labels for the x axis
+  scale_y_continuous(
+    labels = scales::label_number(scale_cut = scales::cut_short_scale())) +
+  labs(
+    title = "Main Countries of Migrant Origin",
+    subtitle = "Highlighting the top 10 countries contributing to global
+                migration | 2020",
+       x = "Country of Origin",
+       y = "Total Migrants (2020)",
+       caption = "Source: United Nations Department of Economic and Social 
+       Affairs, Population Division. International Migrant Stock (2020)") +
+  ## and apply IOM theme
+  iomthemes::theme_iom(grid = "X", axis = "Y", axis_title = "X")
+
+```
+
+## Tables
+
+Use the `knitr::kable()` function to insert simple already stylized tables. For example:
+
+```{r}
+knitr::kable(head(data))
+```
+
+Many packages can help you stylize tables, like [`{gt}`](https://gt.rstudio.com/), [`{DT}`](https://rstudio.github.io/DT/) and more. Some of them might be particularly useful for HTML document and, allow you to enable some user interaction with the table. Below a `{DT}` example that creates a paginated searchable and sort-able table:
+
+```{r}
+DT::datatable(data)
+```
+
+## Layout
+
+Quarto supports a variety of page layout options that enable you to author content that:
+
+- Fills the main content region
+- Overflows the content region
+- Spans the entire page
+- Occupies the document margin
+
+We will cover the main fonctionalities here but you can find all the possible options directly on the [Quarto website](https://quarto.org/docs/authoring/article-layout.html).
+
+### Body column
+
+This is the default behaviour and where most of you content will live.
+
+:::{.column-body .bg-light .pt-3 .mb-3 .text-center}
+.column-body
+:::
+
+If you want to apply different layout simply apply a specific CSS class. For example:
+
+```{markdown}
+:::{.column-body-outset}
+Outset content...
+:::
+```
+
+:::{.column-body-outset .bg-light .pt-3 .mb-3 .text-center}
+.column-body-outset
+:::
+
+### Page column
+
+If you need more space for your content, you can use the `.column-page` class. Content will extent on the size but nor the cover the whole screen yet.
+
+:::{.column-page .bg-light .pt-3 .mb-3 .text-center}
+.column-page
+:::
+
+Or a bit narrower with `.column-page-inset` class.
+
+:::{.column-page-inset .bg-light .pt-3 .mb-3 .text-center}
+.column-page-inset
+:::
+
+### Screen column
+
+For full width content, use the `.column-screen` class. The content will cover the full width of the screen with no margin.
+
+:::{.column-screen .bg-light .pt-3 .mb-3 .text-center}
+.column-screen
+:::
+
+To keep the full width appearance but retain some margin, use the `.class-screen-inset` class.
+
+:::{.column-screen-inset .bg-light .pt-3 .mb-3 .text-center}
+.column-screen-inset
+:::
+
+### Margin content
+
+Some content can be placed within the right margin of the document (below the table of content). Like the columns it can be achieve with a css class. Use `.column-margin` to place content on the right side.
+
+:::{.column-margin .bg-light .py-3 .text-center}
+.column-margin
+:::
+
+All the behaviours mentioned in this section can be applied to images, tables, plots, references and more. Visit the [Quarto page on layouts](https://quarto.org/docs/authoring/article-layout.html) for more information.
