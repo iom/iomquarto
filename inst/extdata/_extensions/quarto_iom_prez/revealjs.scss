@@ -61,6 +61,46 @@ $presentation-h1-font-size: 2.2em !default;
   }
 }
 
+
+/* Custom CSS for Quarto Reveal.js presentation */
+.reveal .slides section h1 {
+  font-size: 2em; /* Adjust the size for h1 headers */
+}
+
+.reveal .slides section h2 {
+  font-size: 1.5em; /* Adjust the size for h2 headers */
+}
+
+.reveal .slides section h3 {
+  font-size: 1.2em; /* Adjust the size for h3 headers */
+}
+
+.reveal .slides section p {
+  font-size: 0.7em; /* Adjust the size for paragraph text */
+}
+
+/* Custom styling for list content */
+.reveal .slides section ul {
+  font-size: 0.7em; /* Adjust the size for list items */
+  margin-left: 20px; /* Add left margin to list items */
+  list-style-type: disc; /* Use disc bullets for list items */
+}
+
+.reveal .slides section ul li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+.reveal .slides section ol {
+  font-size: 0.7em; /* Adjust the size for ordered list items */
+  margin-left: 20px; /* Add left margin to ordered list items */
+  list-style-type: decimal; /* Use decimal numbers for ordered list items */
+}
+
+.reveal .slides section ol li {
+  margin-bottom: 10px; /* Add space between ordered list items */
+}
+
+
 // footer
 .reveal .footer {
   border-top: lighten($iom-dark, 70) solid 2px;
